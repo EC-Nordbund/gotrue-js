@@ -3,7 +3,7 @@ import API, { JSONHTTPError } from 'micro-api-client';
 import Admin from './admin';
 
 const ExpiryMargin = 60 * 1000;
-const storageKey = 'gotrue.user';
+const storageKey = 'ec.user';
 const refreshPromises = {};
 let currentUser = null;
 const forbiddenUpdateAttributes = { api: 1, token: 1, audience: 1, url: 1 };
@@ -53,10 +53,7 @@ export default class User {
   }
 
   update(attributes) {
-    return this._request('/user', {
-      method: 'PUT',
-      body: JSON.stringify(attributes),
-    }).then((response) => this._saveUserData(response)._refreshSavedSession());
+    throw new Error("This operation is not supported")
   }
 
   jwt(forceRefresh) {
