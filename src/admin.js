@@ -5,35 +5,22 @@ export default class Admin {
 
   // Return a list of all users in an audience
   listUsers(aud) {
-    return this.user._request('/admin/users', {
-      method: 'GET',
-      audience: aud,
-    });
+    throw new Error("This operation is not supported")
   }
 
   getUser(user) {
-    return this.user._request(`/admin/users/${user.id}`);
+    throw new Error("This operation is not supported")
   }
 
   updateUser(user, attributes = {}) {
-    return this.user._request(`/admin/users/${user.id}`, {
-      method: 'PUT',
-      body: JSON.stringify(attributes),
-    });
+    throw new Error("This operation is not supported")
   }
 
   createUser(email, password, attributes = {}) {
-    attributes.email = email;
-    attributes.password = password;
-    return this.user._request('/admin/users', {
-      method: 'POST',
-      body: JSON.stringify(attributes),
-    });
+    throw new Error("This operation is not supported")
   }
 
   deleteUser(user) {
-    return this.user._request(`/admin/users/${user.id}`, {
-      method: 'DELETE',
-    });
+    throw new Error("This operation is not supported")
   }
 }
